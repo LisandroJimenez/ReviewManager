@@ -7,6 +7,7 @@ import { dbConnection } from './mongo.js';
 import limiter from '../src/middlewares/validate-cant-request.js';
 import authRoutes from "../src/auth/auth.routes.js";
 import userRoutes from '../src/users/user.routes.js'
+import { createAdmin } from '../src/users/user.controller.js'
 
 
 const middlewares = (app) =>{
@@ -25,6 +26,7 @@ const routes = (app) =>{
 }
 
 const conectarDB = async() =>{
+    
     try {
         await dbConnection();
         console.log('Successful connection to the database')
@@ -33,12 +35,14 @@ const conectarDB = async() =>{
     }
 }
 
+
 export const initServer = async() =>{
- const app = express();
- const port = process.env.PORT || 3001;
- try {
+    const app = express();
+    const port = process.env.PORT || 3001;
+    try {
      middlewares(app);
      conectarDB();
+     await createAdmin()
      routes(app);
      app.listen(port);
      console.log(`server running on port ${port}`)

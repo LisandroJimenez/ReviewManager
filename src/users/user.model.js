@@ -35,6 +35,10 @@ const UserSchema = Schema(
         state: {
             type: Boolean,
             default: true,
+        },
+        isAdmin: {
+            type: Boolean,
+            default: false
         }
     },
     {
