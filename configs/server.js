@@ -7,6 +7,7 @@ import { dbConnection } from './mongo.js';
 import limiter from '../src/middlewares/validate-cant-request.js';
 import authRoutes from "../src/auth/auth.routes.js";
 import userRoutes from '../src/users/user.routes.js'
+import categoryRoutes from '../src/categories/category.routes.js'
 import { createAdmin } from '../src/users/user.controller.js'
 
 
@@ -23,6 +24,7 @@ const middlewares = (app) =>{
 const routes = (app) =>{
     app.use('/reviewManager/v1/auth', authRoutes);
     app.use('/reviewManager/v1/users', userRoutes);
+    app.use('/reviewManager/v1/categories', categoryRoutes)
 }
 
 const conectarDB = async() =>{
