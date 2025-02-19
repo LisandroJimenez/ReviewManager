@@ -4,6 +4,10 @@ import cors from 'cors'
 import helmet from 'helmet';
 import morgan from 'morgan';
 import { dbConnection } from './mongo.js';
+import limiter from '../src/middlewares/validate-cant-request.js';
+import authRoutes from "../src/auth/auth.routes.js";
+import userRoutes from '../src/users/user.routes.js'
+
 
 const middlewares = (app) =>{
     app.use(express.urlencoded({extended: false}));
@@ -12,6 +16,12 @@ const middlewares = (app) =>{
     app.use(cors());
     app.use(helmet());
     app.use(morgan('dev'));
+    app.use(limiter);
+}
+
+const routes = (app) =>{
+    app.use('/reviewManager/v1/auth', authRoutes);
+    app.use('/reviewManager/v1/users', userRoutes);
 }
 
 const conectarDB = async() =>{
@@ -25,10 +35,11 @@ const conectarDB = async() =>{
 
 export const initServer = async() =>{
  const app = express();
- const port = process.env.PORT || 3000;
+ const port = process.env.PORT || 3001;
  try {
      middlewares(app);
      conectarDB();
+     routes(app);
      app.listen(port);
      console.log(`server running on port ${port}`)
     
