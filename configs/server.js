@@ -10,6 +10,7 @@ import userRoutes from '../src/users/user.routes.js'
 import categoryRoutes from '../src/categories/category.routes.js'
 import publicationRoutes from '../src/publications/publication.routes.js'
 import { createAdmin } from '../src/users/user.controller.js'
+import { createCategory } from '../src/categories/category.controller.js';
 
 
 const middlewares = (app) =>{
@@ -47,6 +48,7 @@ export const initServer = async() =>{
      middlewares(app);
      conectarDB();
      await createAdmin()
+     await createCategory()
      routes(app);
      app.listen(port);
      console.log(`server running on port ${port}`)

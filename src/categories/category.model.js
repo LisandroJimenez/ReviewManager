@@ -2,7 +2,7 @@ import { Schema, model } from "mongoose";
 
  const CategorySchema = Schema (
     {
-        category : {
+        name : {
             type: String,
             required: [true, 'The category es required']
         },

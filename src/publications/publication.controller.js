@@ -4,26 +4,25 @@ import Publication from "./publication.model.js";
 export const savePublication = async (req, res) => {
     try {
         const data = req.body;
-                const category = await Category.findById(data.id);
+        const category = await Category.findById(data.id);
         if (!category) {
             return res.status(404).json({
-                success: false, 
+                success: false,
                 msg: 'Category not found'
             });
         }
         const publication = new Publication({
             ...data,
-            categoryK: category._id 
+            category: category._id
         });
         await publication.save();
+
         res.status(200).json({
             success: true,
-            msg: 'Publication added successfully',
-            publication
+            msg: 'Publication saved successfully'
         });
-
     } catch (error) {
-        console.error("Error saving publication:", error);
+        console.error(error); 
         res.status(500).json({
             success: false,
             msg: 'Error saving publication',
@@ -42,35 +41,31 @@ export const getPublication = async (req, res) => {
             .skip(Number(since))
             .limit(Number(limit));
 
-        const publicationWithCategoryNames = await Promise.all(
-            publications.map(async (publication) => {
-                if (!publication.categoryK) return { ...publication.toObject(), categoryK: "No category assigned" };
-
-                const category = await Category.findById(String(publication.categoryK));
-
-                return {
-                    ...publication.toObject(),
-                    categoryK: category ? category.category : "Category not found",
-                };
-            })
-        );
+        const publicationWithCategoryNames = await Promise.all(publications.map(async (publication) => {
+            const category = await Category.findById(publication.category);
+            const categoryName = category && category.status ? category.name : "Category not found"; 
+            return {
+                ...publication.toObject(),
+                category: categoryName,
+            };
+        }));
 
         const total = await Publication.countDocuments(query);
+
         res.status(200).json({
             success: true,
             total,
             publications: publicationWithCategoryNames,
         });
-
     } catch (error) {
-        console.error("Error getting publications:", error);
         res.status(500).json({
             success: false,
             msg: "Error getting publications",
-            error,
+            error: error.message || error,
         });
     }
 };
+
 
 export const updatePublication = async (req, res) => {
     try {
@@ -92,6 +87,23 @@ export const updatePublication = async (req, res) => {
         res.status(500).json({
             success: false,
             msg: 'Error updating publication',
+            error
+        })
+    }
+}
+
+export const deletePublication = async (req, res) => {
+    const { id } = req.params
+    try {
+        await Publication.findByIdAndUpdate(id, {status: false})
+        res.status(200).json({
+            success: true,
+            msg: 'Publication removed successfully'
+        })       
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            msg: 'Error deleting publication',
             error
         })
     }

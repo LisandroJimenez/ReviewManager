@@ -11,14 +11,10 @@ const PublicationSchema = Schema(
             type: String,
             required: true,
         },
-        categoryK: {
+        category: {
             type: Schema.Types.ObjectId,
             ref: 'category',
             required: true
-        },
-        user: {  
-            type: Schema.Types.ObjectId,
-            ref: 'User',
         },
         status: {
             type: Boolean,

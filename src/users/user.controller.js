@@ -12,16 +12,7 @@ export const getUsers = async (req = request, res = response) => {
       User.find(query)
         .skip(Number(desde))
         .limit(Number(limite))
-        .populate({
-          path: 'courses',  
-          match: { status: true }, 
-          select: 'name description',  
-        })
-        .populate({
-          path: 'createdCourses',  
-          match: { status: true }, 
-          select: 'name description',  
-        })
+
     ]);
 
     res.status(200).json({

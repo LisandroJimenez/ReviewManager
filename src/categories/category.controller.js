@@ -60,7 +60,7 @@ export const updateCategories = async (req, res) => {
         if (!authenticatedUser || !authenticatedUser.isAdmin) {
             return res.status(403).json({
                 success: false,
-                msg: 'You do not have permission to add categories'
+                msg: 'You do not have permission to update categories'
             });
         }
     
@@ -107,5 +107,19 @@ export const deleteCategory = async (req, res) => {
             msg: 'Error deleting Category',
             error
         })
+    }
+}
+
+export const createCategory = async () => {
+    try {
+        const existCategory = await Category.findOne({name: "General"})
+        if (!existCategory) {
+            const newCategory = new Category({
+                name: "General"
+            })
+            await newCategory.save()
+        }
+    } catch (error) {
+        console.log(error)
     }
 }
