@@ -1,0 +1,13 @@
+[{
+  "_id": {
+    "$oid": "67be4422b92d8773bb773d68"
+  },
+  "name": "General",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-25T22:28:50.724Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-25T22:28:50.724Z"
+  }
+}]

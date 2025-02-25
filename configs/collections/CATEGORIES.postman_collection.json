@@ -1,0 +1,144 @@
+{
+	"info": {
+		"_postman_id": "f66961ed-6c19-4d11-a10f-94ec73674839",
+		"name": "CATEGORIES",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42599664"
+	},
+	"item": [
+		{
+			"name": "Save-Categories",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JkMzQyOGI4Nzk5MDFhYWRjNzczNGIiLCJpYXQiOjE3NDA0NjIyMjgsImV4cCI6MTc0MDQ2NTgyOH0.a9L_VzVW5irQ-mw2vrnsXAuote3J20_R9Y-BVQe6poI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Pedagogia\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/reviewManager/v1/categories",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"reviewManager",
+						"v1",
+						"categories"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get-Categories",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/reviewManager/v1/categories",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"reviewManager",
+						"v1",
+						"categories"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update-Categories",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JkMzQyOGI4Nzk5MDFhYWRjNzczNGIiLCJpYXQiOjE3NDA0NjI3OTAsImV4cCI6MTc0MDQ2NjM5MH0.kuNreGkpyfdxP3npP4ea-OY4rS5kAYnU-ea2_GYT-94",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Ciencia\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/reviewManager/v1/categories/67bd3696e75f69fb4033b821",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"reviewManager",
+						"v1",
+						"categories",
+						"67bd3696e75f69fb4033b821"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete-Categories",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JkMzQyOGI4Nzk5MDFhYWRjNzczNGIiLCJpYXQiOjE3NDA0NjI3OTAsImV4cCI6MTc0MDQ2NjM5MH0.kuNreGkpyfdxP3npP4ea-OY4rS5kAYnU-ea2_GYT-94",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/reviewManager/v1/categories/67bd3696e75f69fb4033b821",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"reviewManager",
+						"v1",
+						"categories",
+						"67bd3696e75f69fb4033b821"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

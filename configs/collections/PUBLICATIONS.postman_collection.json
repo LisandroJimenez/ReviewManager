@@ -1,0 +1,103 @@
+{
+	"info": {
+		"_postman_id": "b7a3c0d6-e1f1-49d5-abd1-f0198297d25e",
+		"name": "PUBLICATIONS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42599664"
+	},
+	"item": [
+		{
+			"name": "Save-Publications",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JlNDQyMmI5MmQ4NzczYmI3NzNkNjUiLCJpYXQiOjE3NDA1MjI1OTksImV4cCI6MTc0MDUyNjE5OX0.AkVAs1s9hGpo9A9rjRV_9BEHaXieZo2Und1qL65gc1o",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Comida\",\r\n    \"description\": \"Pasando el tiempo con amigos\",\r\n    \"id\": \"67be4422b92d8773bb773d68\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/reviewManager/v1/publications",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"reviewManager",
+						"v1",
+						"publications"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get-Publications",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/reviewManager/v1/publications",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"reviewManager",
+						"v1",
+						"publications"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update-Publications",
+			"request": {
+				"method": "PUT",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Delete-Publications",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JkMzQyOGI4Nzk5MDFhYWRjNzczNGIiLCJpYXQiOjE3NDA0NjQ0NDYsImV4cCI6MTc0MDQ2ODA0Nn0.qgweodA4jTD0es5hDmAg6pa-r4rVkVgM5KvdqLZXpnM",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/reviewManager/v1/publications/67bd5691bb6cc711d98c26d1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"reviewManager",
+						"v1",
+						"publications",
+						"67bd5691bb6cc711d98c26d1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

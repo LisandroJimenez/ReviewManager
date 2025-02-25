@@ -1,0 +1,98 @@
+{
+	"info": {
+		"_postman_id": "c56a3d39-b02a-4e00-a586-fbd6b7fc3ee2",
+		"name": "COMMENTS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42599664"
+	},
+	"item": [
+		{
+			"name": "Save-Comments",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JlNDQyMmI5MmQ4NzczYmI3NzNkNjUiLCJpYXQiOjE3NDA1MjI1OTksImV4cCI6MTc0MDUyNjE5OX0.AkVAs1s9hGpo9A9rjRV_9BEHaXieZo2Und1qL65gc1o",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"description\": \"Hola\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/reviewManager/v1/comments/67be4473b92d8773bb773d77",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"reviewManager",
+						"v1",
+						"comments",
+						"67be4473b92d8773bb773d77"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get-Comments",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/reviewManager/v1/comments/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"reviewManager",
+						"v1",
+						"comments",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update-Comments",
+			"request": {
+				"method": "PUT",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Delete-Comments",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/reviewManager/v1/comments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"reviewManager",
+						"v1",
+						"comments"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,19 @@
+[{
+  "_id": {
+    "$oid": "67be4422b92d8773bb773d65"
+  },
+  "name": "Admin",
+  "surname": "dd",
+  "username": "admin",
+  "email": "admin@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$JBEPrpv/B2Bgvmamwm7XXQ$HK7LYW9HMhOS7xKIFmfw5re6gLo2aS1fBLYDBfpYlNQ",
+  "phone": "12345667",
+  "state": true,
+  "isAdmin": true,
+  "createdAt": {
+    "$date": "2025-02-25T22:28:50.716Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-25T22:28:50.716Z"
+  }
+}]
