@@ -3,7 +3,7 @@ import Comment from "./comment.model.js";
 import User from "../users/user.model.js";
 
 export const saveComment = async (req, res) => {
-    const { id } = req.params;  
+    const { id } = req.params; 
     const data = req.body; 
 
     try {
@@ -14,22 +14,31 @@ export const saveComment = async (req, res) => {
                 msg: 'Publication not found',
             });
         }
-        const userId = req.usuario.id;  
+        const userId = req.usuario?.id; 
         if (!userId) {
             return res.status(404).json({
                 success: false,
                 msg: 'User not found',
             });
         }
+        if (!data.description) {
+            return res.status(400).json({
+                success: false,
+                msg: 'Comment description is required',
+            });
+        }
         const comment = new Comment({
             ...data,
-            publication: id,
-            user: userId  
+            publication: id,  
+            user: userId     
         });
         await comment.save();  
-        res.status(200).json({
+        publication.comments.push(comment._id); 
+        await publication.save(); 
+
+        res.status(201).json({
             success: true,
-            msg: 'Comment saved successfully',
+            msg: 'Comment saved and publication updated successfully',
         });
     } catch (error) {
         res.status(500).json({
@@ -49,20 +58,22 @@ export const getComment = async (req, res) => {
     try {
         const comments = await Comment.find(query)
             .skip(Number(since))
-            .limit(Number(limit));
-        const commentsWithUserNames = await Promise.all(comments.map(async (comment) => {
-            const user = await User.findById(comment.user);  
-            const userName = user ? user.name : "User not found";  
-            return {
-                ...comment.toObject(),
-                userName, 
-            };
-        }));
+            .limit(Number(limit))
+            .populate({
+                path: 'user',
+                select: 'name -_id',
+            })
+            .populate({
+                path: 'publication',
+                select: 'title -_id',
+            })
+
+
         const total = await Comment.countDocuments(query);
         res.status(200).json({
             success: true,
             total,
-            comments: commentsWithUserNames,
+            comments
         });
     } catch (error) {
         res.status(500).json({
@@ -72,6 +83,7 @@ export const getComment = async (req, res) => {
         });
     }
 };
+
 
 
 export const updateComment = async (req, res) => {

@@ -7,7 +7,7 @@ const CommentSchema = Schema({
     },
     publication: {
         type: Schema.Types.ObjectId,
-        ref: 'publication',
+        ref: 'Publication',
         required: true
     },
     status: {

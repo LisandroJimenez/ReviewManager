@@ -19,7 +19,12 @@ const PublicationSchema = Schema(
         status: {
             type: Boolean,
             default: true
-        }
+        },
+        comments: [{
+            type: Schema.Types.ObjectId,
+            ref: 'Comment',
+            required: true
+        }]
     },
     {
         timestamps: true,

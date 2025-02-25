@@ -39,8 +39,15 @@ export const getPublication = async (req, res) => {
     try {
         const publications = await Publication.find(query)
             .skip(Number(since))
-            .limit(Number(limit));
-
+            .limit(Number(limit))
+            .populate({
+                path: 'comments',
+                select: 'description user',
+                populate: {
+                    path: 'user',
+                    select: 'username -_id', 
+                }
+            });
         const publicationWithCategoryNames = await Promise.all(publications.map(async (publication) => {
             const category = await Category.findById(publication.category);
             const categoryName = category && category.status ? category.name : "Category not found"; 
@@ -58,6 +65,7 @@ export const getPublication = async (req, res) => {
             publications: publicationWithCategoryNames,
         });
     } catch (error) {
+        console.error(error);  
         res.status(500).json({
             success: false,
             msg: "Error getting publications",
@@ -65,6 +73,8 @@ export const getPublication = async (req, res) => {
         });
     }
 };
+
+ 
 
 
 export const updatePublication = async (req, res) => {
