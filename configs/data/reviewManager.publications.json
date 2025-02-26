@@ -1,22 +1,50 @@
 [{
   "_id": {
-    "$oid": "67be4473b92d8773bb773d77"
+    "$oid": "67be9b897b13f42a27abd4e8"
   },
-  "title": "Comida",
-  "description": "Pasando el tiempo con amigos",
+  "title": "Futbol con familia",
+  "description": "futbol con tios, primos y mas",
   "category": {
-    "$oid": "67be4422b92d8773bb773d68"
+    "$oid": "67be946e59b81825b8e389d3"
   },
   "status": true,
   "comments": [
     {
-      "$oid": "67be44a1b92d8773bb773d7e"
+      "$oid": "67be9fdb64e178adc8d73cea"
     }
   ],
+  "user": {
+    "$oid": "67be909059b81825b8e389b9"
+  },
   "createdAt": {
-    "$date": "2025-02-25T22:30:11.542Z"
+    "$date": "2025-02-26T04:41:45.507Z"
   },
   "updatedAt": {
-    "$date": "2025-02-25T22:30:57.953Z"
+    "$date": "2025-02-26T05:06:29.884Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67be9f9f64e178adc8d73ce1"
+  },
+  "title": "Estudio",
+  "description": "Practicando matematicas",
+  "category": {
+    "$oid": "67be90d259b81825b8e389c5"
+  },
+  "status": true,
+  "comments": [
+    {
+      "$oid": "67be9ffc64e178adc8d73cf0"
+    }
+  ],
+  "user": {
+    "$oid": "67be909559b81825b8e389bc"
+  },
+  "createdAt": {
+    "$date": "2025-02-26T04:59:11.546Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-26T05:00:44.258Z"
   }
 }]

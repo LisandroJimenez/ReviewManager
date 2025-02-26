@@ -66,6 +66,7 @@ export const getComment = async (req, res) => {
             .populate({
                 path: 'publication',
                 select: 'title -_id',
+                match: {status: true}
             })
 
 
@@ -90,8 +91,8 @@ export const updateComment = async (req, res) => {
     try {
         const { id } = req.params;
         const userId = req.usuario.id; 
+        const data = req.body; 
         const comment = await Comment.findById(id);
-
         if (!comment) {
             return res.status(404).json({
                 success: false,
@@ -105,7 +106,6 @@ export const updateComment = async (req, res) => {
             });
         }
         const updatedComment = await Comment.findByIdAndUpdate(id, data, { new: true });
-
         res.status(200).json({
             success: true,
             msg: 'Comment Updated Successfully',
@@ -119,6 +119,7 @@ export const updateComment = async (req, res) => {
         });
     }
 };
+
 
 
 export const deleteComment = async (req, res) => {

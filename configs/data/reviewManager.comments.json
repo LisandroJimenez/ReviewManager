@@ -1,19 +1,38 @@
 [{
   "_id": {
-    "$oid": "67be44a1b92d8773bb773d7e"
+    "$oid": "67be9fdb64e178adc8d73cea"
   },
-  "description": "Hola",
+  "description": "pasenla bien, saludos",
   "publication": {
-    "$oid": "67be4473b92d8773bb773d77"
+    "$oid": "67be9b897b13f42a27abd4e8"
   },
   "status": true,
   "user": {
-    "$oid": "67be4422b92d8773bb773d65"
+    "$oid": "67be909559b81825b8e389bc"
   },
   "createdAt": {
-    "$date": "2025-02-25T22:30:57.950Z"
+    "$date": "2025-02-26T05:00:11.675Z"
   },
   "updatedAt": {
-    "$date": "2025-02-25T22:30:57.950Z"
+    "$date": "2025-02-26T05:17:11.167Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67be9ffc64e178adc8d73cf0"
+  },
+  "description": "Estudia bien ",
+  "publication": {
+    "$oid": "67be9f9f64e178adc8d73ce1"
+  },
+  "status": true,
+  "user": {
+    "$oid": "67be909059b81825b8e389b9"
+  },
+  "createdAt": {
+    "$date": "2025-02-26T05:00:44.257Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-26T05:00:44.257Z"
   }
 }]

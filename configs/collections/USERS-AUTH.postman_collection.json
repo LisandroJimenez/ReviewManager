@@ -34,7 +34,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"Lisandro\",\r\n    \"surname\": \"Jimenez\",\r\n    \"username\": \"ljimenez\",\r\n    \"email\":\"ljimenez@gmail.com\",\r\n    \"phone\": \"12345678\",\r\n    \"password\":\"12345678\"\r\n}",
+					"raw": "{\r\n    \"name\": \"jema\",\r\n    \"surname\": \"Jimenez\",\r\n    \"username\": \"jjimenez\",\r\n    \"email\":\"jjimenez@gmail.com\",\r\n    \"phone\": \"12345678\",\r\n    \"password\":\"12345678\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"

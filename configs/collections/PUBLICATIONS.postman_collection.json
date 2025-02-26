@@ -13,13 +13,13 @@
 				"header": [
 					{
 						"key": "x-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JlNDQyMmI5MmQ4NzczYmI3NzNkNjUiLCJpYXQiOjE3NDA1MjI1OTksImV4cCI6MTc0MDUyNjE5OX0.AkVAs1s9hGpo9A9rjRV_9BEHaXieZo2Und1qL65gc1o",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JlOTA5NTU5YjgxODI1YjhlMzg5YmMiLCJpYXQiOjE3NDA1NDU5MTIsImV4cCI6MTc0MDU0OTUxMn0.CWGXIh0OmJxillXShHwtmvoR-5s9pY1wW__YiEpedog",
 						"type": "text"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"title\": \"Comida\",\r\n    \"description\": \"Pasando el tiempo con amigos\",\r\n    \"id\": \"67be4422b92d8773bb773d68\"\r\n}",
+					"raw": "{\r\n    \"title\": \"Estudio\",\r\n    \"description\": \"Practicando matematicas\",\r\n    //id de la categoria\r\n    \"id\": \"67be90d259b81825b8e389c5\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -67,7 +67,36 @@
 			"name": "Update-Publications",
 			"request": {
 				"method": "PUT",
-				"header": []
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JlOTA5MDU5YjgxODI1YjhlMzg5YjkiLCJpYXQiOjE3NDA1NDU3NDYsImV4cCI6MTc0MDU0OTM0Nn0.LOZFdjyf3eRDdhNAUSRKcdt4tr9yx3ZP3litQPuQEN4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"description\": \"futbol con tios, primos y mas\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/reviewManager/v1/publications/67be9b897b13f42a27abd4e8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"reviewManager",
+						"v1",
+						"publications",
+						"67be9b897b13f42a27abd4e8"
+					]
+				}
 			},
 			"response": []
 		},
@@ -78,12 +107,12 @@
 				"header": [
 					{
 						"key": "x-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JkMzQyOGI4Nzk5MDFhYWRjNzczNGIiLCJpYXQiOjE3NDA0NjQ0NDYsImV4cCI6MTc0MDQ2ODA0Nn0.qgweodA4jTD0es5hDmAg6pa-r4rVkVgM5KvdqLZXpnM",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JlOTA5MDU5YjgxODI1YjhlMzg5YjkiLCJpYXQiOjE3NDA1NDU2MTAsImV4cCI6MTc0MDU0OTIxMH0.g8_iunJtc1DowD7vPdZQKxTxhrtUL7L9l5OUh98p7to",
 						"type": "text"
 					}
 				],
 				"url": {
-					"raw": "http://localhost:3000/reviewManager/v1/publications/67bd5691bb6cc711d98c26d1",
+					"raw": "http://localhost:3000/reviewManager/v1/publications/67be9b897b13f42a27abd4e8",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -93,7 +122,7 @@
 						"reviewManager",
 						"v1",
 						"publications",
-						"67bd5691bb6cc711d98c26d1"
+						"67be9b897b13f42a27abd4e8"
 					]
 				}
 			},

@@ -3,8 +3,9 @@ import Publication from "./publication.model.js";
 
 export const savePublication = async (req, res) => {
     try {
-        const data = req.body;
-        const category = await Category.findById(data.id);
+        const { id, ...restData } = req.body;
+        const userId = req.usuario.id; 
+        const category = await Category.findById(id);
         if (!category) {
             return res.status(404).json({
                 success: false,
@@ -12,24 +13,27 @@ export const savePublication = async (req, res) => {
             });
         }
         const publication = new Publication({
-            ...data,
-            category: category._id
+            ...restData,
+            category: category._id,
+            user: userId,
         });
+
         await publication.save();
 
-        res.status(200).json({
+        res.status(201).json({
             success: true,
             msg: 'Publication saved successfully'
         });
     } catch (error) {
-        console.error(error); 
+        console.error(error);
         res.status(500).json({
             success: false,
             msg: 'Error saving publication',
-            error
+            error: error.message
         });
     }
 };
+
 
 
 export const getPublication = async (req, res) => {
@@ -43,17 +47,32 @@ export const getPublication = async (req, res) => {
             .populate({
                 path: 'comments',
                 select: 'description user',
+                match: { status: true },
                 populate: {
                     path: 'user',
-                    select: 'username -_id', 
+                    select: 'username -_id',
                 }
+            })
+            .populate({
+                path: 'user', 
+                select: 'username -_id'
             });
+
         const publicationWithCategoryNames = await Promise.all(publications.map(async (publication) => {
             const category = await Category.findById(publication.category);
-            const categoryName = category && category.status ? category.name : "Category not found"; 
+            let categoryName = "General";
+            if (category && category.status) {
+                categoryName = category.name;
+            } else {
+                const generalCategory = await Category.findOne({ name: "General" });
+                if (generalCategory) {
+                    categoryName = generalCategory.name;
+                }
+            }
             return {
                 ...publication.toObject(),
                 category: categoryName,
+                user: publication.user?.username || "Unknown user"
             };
         }));
 
@@ -65,7 +84,7 @@ export const getPublication = async (req, res) => {
             publications: publicationWithCategoryNames,
         });
     } catch (error) {
-        console.error(error);  
+        console.error(error);
         res.status(500).json({
             success: false,
             msg: "Error getting publications",
@@ -74,48 +93,76 @@ export const getPublication = async (req, res) => {
     }
 };
 
+
+
  
 
 
 export const updatePublication = async (req, res) => {
+    const { id } = req.params;
+    const { _id, ...data } = req.body; 
+    const userId = req.usuario.id; 
     try {
-        const { id } = req.params;
-        const { _id, ...data }  = req.body;
-        const publication = await Publication.findByIdAndUpdate(id, data, {new: true})
+        const publication = await Publication.findById(id);
         if (!publication) {
             return res.status(404).json({
                 success: false,
-                msg: 'Publication not found'
-            })
+                msg: 'Publication not found',
+            });
         }
+        if (publication.user.toString() !== userId) {
+            return res.status(403).json({
+                success: false,
+                msg: 'You are not authorized to update this publication',
+            });
+        }
+        const updatedPublication = await Publication.findByIdAndUpdate(id, data, { new: true });
         res.status(200).json({
             success: true,
             msg: 'Publication updated successfully',
-            publication
-        })
+            publication: updatedPublication,
+        });
     } catch (error) {
+        console.error(error);
         res.status(500).json({
             success: false,
             msg: 'Error updating publication',
-            error
-        })
+            error: error.message,
+        });
     }
-}
+};
+
 
 export const deletePublication = async (req, res) => {
-    const { id } = req.params
+    const { id } = req.params;
+    const userId = req.usuario.id;
+
     try {
-        await Publication.findByIdAndUpdate(id, {status: false})
+        const publication = await Publication.findById(id);
+        if (!publication) {
+            return res.status(404).json({
+                success: false,
+                msg: 'Publication not found',
+            });
+        }
+        if (publication.user.toString() !== userId) {
+            return res.status(403).json({
+                success: false,
+                msg: 'You are not authorized to delete this publication',
+            });
+        }
+        await Publication.findByIdAndUpdate(id, { status: false });
+
         res.status(200).json({
             success: true,
-            msg: 'Publication removed successfully'
-        })       
+            msg: 'Publication removed successfully',
+        });
     } catch (error) {
+        console.error(error);
         res.status(500).json({
             success: false,
             msg: 'Error deleting publication',
-            error
-        })
+            error: error.message,
+        });
     }
-}
-
+};

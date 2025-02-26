@@ -13,13 +13,13 @@
 				"header": [
 					{
 						"key": "x-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JkMzQyOGI4Nzk5MDFhYWRjNzczNGIiLCJpYXQiOjE3NDA0NjIyMjgsImV4cCI6MTc0MDQ2NTgyOH0.a9L_VzVW5irQ-mw2vrnsXAuote3J20_R9Y-BVQe6poI",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JlOTA2MjU5YjgxODI1YjhlMzg5YjMiLCJpYXQiOjE3NDA1NDIxNTUsImV4cCI6MTc0MDU0NTc1NX0.E2PxXGwDDwnrxWn6A_vR4My1HlNFEr-2QpR0fa3Y714",
 						"type": "text"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"Pedagogia\"\r\n}",
+					"raw": "{\r\n    \"name\": \"Pasatiempo\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -82,13 +82,13 @@
 				"header": [
 					{
 						"key": "x-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JkMzQyOGI4Nzk5MDFhYWRjNzczNGIiLCJpYXQiOjE3NDA0NjI3OTAsImV4cCI6MTc0MDQ2NjM5MH0.kuNreGkpyfdxP3npP4ea-OY4rS5kAYnU-ea2_GYT-94",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JlOTA2MjU5YjgxODI1YjhlMzg5YjMiLCJpYXQiOjE3NDA1NDcwNzIsImV4cCI6MTc0MDU1MDY3Mn0.R0I8Xtuckl-DMYe9DTyoKOMG6G_25sZWMTpIoB3-r8M",
 						"type": "text"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"Ciencia\"\r\n}",
+					"raw": "{\r\n    \"name\": \"Ciencias\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -96,7 +96,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/reviewManager/v1/categories/67bd3696e75f69fb4033b821",
+					"raw": "http://localhost:3000/reviewManager/v1/categories/67be90d259b81825b8e389c5",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -106,7 +106,7 @@
 						"reviewManager",
 						"v1",
 						"categories",
-						"67bd3696e75f69fb4033b821"
+						"67be90d259b81825b8e389c5"
 					]
 				}
 			},
@@ -119,12 +119,12 @@
 				"header": [
 					{
 						"key": "x-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JkMzQyOGI4Nzk5MDFhYWRjNzczNGIiLCJpYXQiOjE3NDA0NjI3OTAsImV4cCI6MTc0MDQ2NjM5MH0.kuNreGkpyfdxP3npP4ea-OY4rS5kAYnU-ea2_GYT-94",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JlOTA2MjU5YjgxODI1YjhlMzg5YjMiLCJpYXQiOjE3NDA1NDY1ODksImV4cCI6MTc0MDU1MDE4OX0.DPRQ39MtmTIXDIpZ8KRfOv2ibgqh8Y2GXE1Ne5eppN0",
 						"type": "text"
 					}
 				],
 				"url": {
-					"raw": "http://localhost:3000/reviewManager/v1/categories/67bd3696e75f69fb4033b821",
+					"raw": "http://localhost:3000/reviewManager/v1/categories/67be90d259b81825b8e389c5",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -134,7 +134,7 @@
 						"reviewManager",
 						"v1",
 						"categories",
-						"67bd3696e75f69fb4033b821"
+						"67be90d259b81825b8e389c5"
 					]
 				}
 			},

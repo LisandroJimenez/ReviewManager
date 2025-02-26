@@ -13,13 +13,13 @@
 				"header": [
 					{
 						"key": "x-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JlNDQyMmI5MmQ4NzczYmI3NzNkNjUiLCJpYXQiOjE3NDA1MjI1OTksImV4cCI6MTc0MDUyNjE5OX0.AkVAs1s9hGpo9A9rjRV_9BEHaXieZo2Und1qL65gc1o",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JlOTA5MDU5YjgxODI1YjhlMzg5YjkiLCJpYXQiOjE3NDA1NDYwMjgsImV4cCI6MTc0MDU0OTYyOH0.jKHHs7bjLbH-LpWwtYdAgvPfRjXwBCEzTcYwpXoovxQ",
 						"type": "text"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"description\": \"Hola\"\r\n}",
+					"raw": "{\r\n    \"description\": \"Estudia bien \"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -27,7 +27,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/reviewManager/v1/comments/67be4473b92d8773bb773d77",
+					"raw": "http://localhost:3000/reviewManager/v1/comments/67be9f9f64e178adc8d73ce1",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -37,7 +37,7 @@
 						"reviewManager",
 						"v1",
 						"comments",
-						"67be4473b92d8773bb773d77"
+						"67be9f9f64e178adc8d73ce1"
 					]
 				}
 			},
@@ -47,36 +47,6 @@
 			"name": "Get-Comments",
 			"request": {
 				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/reviewManager/v1/comments/",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"reviewManager",
-						"v1",
-						"comments",
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Update-Comments",
-			"request": {
-				"method": "PUT",
-				"header": []
-			},
-			"response": []
-		},
-		{
-			"name": "Delete-Comments",
-			"request": {
-				"method": "DELETE",
 				"header": [],
 				"url": {
 					"raw": "http://localhost:3000/reviewManager/v1/comments",
@@ -89,6 +59,71 @@
 						"reviewManager",
 						"v1",
 						"comments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update-Comments",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JlOTA5NTU5YjgxODI1YjhlMzg5YmMiLCJpYXQiOjE3NDA1NDY5NDEsImV4cCI6MTc0MDU1MDU0MX0.fGLRFwHKLMx5b2IdsDCBw_6Yr4hmSWMbI0mbd0ec5TU",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"description\": \"pasenla bien, saludos\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/reviewManager/v1/comments/67be9fdb64e178adc8d73cea",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"reviewManager",
+						"v1",
+						"comments",
+						"67be9fdb64e178adc8d73cea"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete-Comments",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JlOTA5NTU5YjgxODI1YjhlMzg5YmMiLCJpYXQiOjE3NDA1NDYxMDAsImV4cCI6MTc0MDU0OTcwMH0.64mEd23XhvOqFPkuR2QKDmjJFmpfy1fei0AetB0Dr9U",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/reviewManager/v1/comments/67be9fdb64e178adc8d73cea",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"reviewManager",
+						"v1",
+						"comments",
+						"67be9fdb64e178adc8d73cea"
 					]
 				}
 			},
