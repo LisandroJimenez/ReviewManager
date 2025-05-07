@@ -3,9 +3,9 @@ import Publication from "./publication.model.js";
 
 export const savePublication = async (req, res) => {
     try {
-        const { id, ...restData } = req.body;
+        const { categoryId, ...restData } = req.body;
         const userId = req.usuario.id; 
-        const category = await Category.findById(id);
+        const category = await Category.findById(categoryId);
         if (!category) {
             return res.status(404).json({
                 success: false,
@@ -46,11 +46,11 @@ export const getPublication = async (req, res) => {
             .limit(Number(limit))
             .populate({
                 path: 'comments',
-                select: 'description user',
+                select: 'description user -_id',
                 match: { status: true },
                 populate: {
                     path: 'user',
-                    select: 'username -_id',
+                    select: 'username -_id  ',
                 }
             })
             .populate({

@@ -112,14 +112,18 @@ export const deleteCategory = async (req, res) => {
 
 export const createCategory = async () => {
     try {
-        const existCategory = await Category.findOne({name: "General"})
-        if (!existCategory) {
-            const newCategory = new Category({
-                name: "General"
-            })
-            await newCategory.save()
+      const categoriesToCheck = ["Taller", "Tecnologia", "Practica"];
+  
+      for (const name of categoriesToCheck) {
+        const exists = await Category.findOne({ name });
+        if (!exists) {
+          const newCategory = new Category({ name });
+          await newCategory.save();
         }
+      }
     } catch (error) {
-        console.log(error)
+
+      console.log("Error creating categories:", error);
     }
-}
+  };
+  

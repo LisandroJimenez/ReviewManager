@@ -99,10 +99,10 @@ export const createAdmin = async () => {
         const existAdmin = await User.findOne({ isAdmin: true });
         
         if (!existAdmin) {
-            const hashed = await argon2.hash("admin12345678");
+            const hashed = await argon2.hash("12345678");
             const adminUser = new User({
                 name: "Admin",
-                surname: "dd",
+                surname: "admin",
                 username: "admin",
                 email: "admin@gmail.com",
                 phone: "12345667",
