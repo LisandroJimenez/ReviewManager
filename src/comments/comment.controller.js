@@ -1,6 +1,5 @@
 import Publication from "../publications/publication.model.js";
 import Comment from "./comment.model.js";
-import User from "../users/user.model.js";
 
 export const saveComment = async (req, res) => {
     const { id } = req.params; 
@@ -14,13 +13,7 @@ export const saveComment = async (req, res) => {
                 msg: 'Publication not found',
             });
         }
-        const userId = req.usuario?.id; 
-        if (!userId) {
-            return res.status(404).json({
-                success: false,
-                msg: 'User not found',
-            });
-        }
+
         if (!data.description) {
             return res.status(400).json({
                 success: false,
@@ -30,7 +23,6 @@ export const saveComment = async (req, res) => {
         const comment = new Comment({
             ...data,
             publication: id,  
-            user: userId     
         });
         await comment.save();  
         publication.comments.push(comment._id); 
@@ -38,7 +30,7 @@ export const saveComment = async (req, res) => {
 
         res.status(201).json({
             success: true,
-            msg: 'Comment saved and publication updated successfully',
+            msg: 'Comment saved  successfully',
         });
     } catch (error) {
         res.status(500).json({
@@ -52,17 +44,13 @@ export const saveComment = async (req, res) => {
 
 
 export const getComment = async (req, res) => {
-    const { limit = 10, since = 0 } = req.query;
+    const { limit , since } = req.query;
     const query = { status: true };
 
     try {
         const comments = await Comment.find(query)
             .skip(Number(since))
             .limit(Number(limit))
-            .populate({
-                path: 'user',
-                select: 'name -_id',
-            })
             .populate({
                 path: 'publication',
                 select: 'title -_id',
@@ -90,7 +78,6 @@ export const getComment = async (req, res) => {
 export const updateComment = async (req, res) => {
     try {
         const { id } = req.params;
-        const userId = req.usuario.id; 
         const data = req.body; 
         const comment = await Comment.findById(id);
         if (!comment) {
@@ -99,12 +86,7 @@ export const updateComment = async (req, res) => {
                 msg: 'Comment not found',
             });
         }
-        if (comment.user.toString() !== userId) {
-            return res.status(403).json({
-                success: false,
-                msg: 'You can only edit your own comments',
-            });
-        }
+
         const updatedComment = await Comment.findByIdAndUpdate(id, data, { new: true });
         res.status(200).json({
             success: true,
@@ -124,7 +106,6 @@ export const updateComment = async (req, res) => {
 
 export const deleteComment = async (req, res) => {
     const { id } = req.params;
-    const userId = req.usuario.id;  
     try {
         const comment = await Comment.findById(id);
         if (!comment) {
@@ -134,12 +115,6 @@ export const deleteComment = async (req, res) => {
             });
         }
 
-        if (comment.user.toString() !== userId) {
-            return res.status(403).json({
-                success: false,
-                msg: 'You can only delete your own comments'
-            });
-        }
         await Comment.findByIdAndUpdate(id, { status: false });
         res.status(200).json({
             success: true,

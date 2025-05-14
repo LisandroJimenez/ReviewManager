@@ -5,12 +5,9 @@ import helmet from 'helmet';
 import morgan from 'morgan';
 import { dbConnection } from './mongo.js';
 import limiter from '../src/middlewares/validate-cant-request.js';
-import authRoutes from "../src/auth/auth.routes.js";
-import userRoutes from '../src/users/user.routes.js'
 import categoryRoutes from '../src/categories/category.routes.js'
 import publicationRoutes from '../src/publications/publication.routes.js'
 import commentRoutes from '../src/comments/comment.routes.js'
-import { createAdmin } from '../src/users/user.controller.js'
 import { createCategory } from '../src/categories/category.controller.js';
 
 
@@ -25,8 +22,6 @@ const middlewares = (app) =>{
 }
 
 const routes = (app) =>{
-    app.use('/reviewManager/v1/auth', authRoutes);
-    app.use('/reviewManager/v1/users', userRoutes);
     app.use('/reviewManager/v1/categories', categoryRoutes);
     app.use('/reviewManager/v1/publications', publicationRoutes);
     app.use('/reviewManager/v1/comments', commentRoutes);
@@ -49,7 +44,6 @@ export const initServer = async() =>{
     try {
      middlewares(app);
      conectarDB();
-     await createAdmin()
      await createCategory()
      routes(app);
      app.listen(port);

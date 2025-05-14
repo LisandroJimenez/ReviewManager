@@ -4,7 +4,6 @@ import Publication from "./publication.model.js";
 export const savePublication = async (req, res) => {
     try {
         const { categoryId, ...restData } = req.body;
-        const userId = req.usuario.id; 
         const category = await Category.findById(categoryId);
         if (!category) {
             return res.status(404).json({
@@ -14,8 +13,7 @@ export const savePublication = async (req, res) => {
         }
         const publication = new Publication({
             ...restData,
-            category: category._id,
-            user: userId,
+            category: category._id
         });
 
         await publication.save();
@@ -45,18 +43,9 @@ export const getPublication = async (req, res) => {
             .skip(Number(since))
             .limit(Number(limit))
             .populate({
-                path: 'comments',
-                select: 'description user -_id',
-                match: { status: true },
-                populate: {
-                    path: 'user',
-                    select: 'username -_id  ',
-                }
+                path: 'comments'
             })
-            .populate({
-                path: 'user', 
-                select: 'username -_id'
-            });
+
 
         const publicationWithCategoryNames = await Promise.all(publications.map(async (publication) => {
             const category = await Category.findById(publication.category);
@@ -71,8 +60,7 @@ export const getPublication = async (req, res) => {
             }
             return {
                 ...publication.toObject(),
-                category: categoryName,
-                user: publication.user?.username || "Unknown user"
+                category: categoryName
             };
         }));
 
@@ -101,7 +89,6 @@ export const getPublication = async (req, res) => {
 export const updatePublication = async (req, res) => {
     const { id } = req.params;
     const { _id, ...data } = req.body; 
-    const userId = req.usuario.id; 
     try {
         const publication = await Publication.findById(id);
         if (!publication) {
@@ -110,12 +97,7 @@ export const updatePublication = async (req, res) => {
                 msg: 'Publication not found',
             });
         }
-        if (publication.user.toString() !== userId) {
-            return res.status(403).json({
-                success: false,
-                msg: 'You are not authorized to update this publication',
-            });
-        }
+
         const updatedPublication = await Publication.findByIdAndUpdate(id, data, { new: true });
         res.status(200).json({
             success: true,
@@ -135,7 +117,6 @@ export const updatePublication = async (req, res) => {
 
 export const deletePublication = async (req, res) => {
     const { id } = req.params;
-    const userId = req.usuario.id;
 
     try {
         const publication = await Publication.findById(id);
@@ -145,12 +126,7 @@ export const deletePublication = async (req, res) => {
                 msg: 'Publication not found',
             });
         }
-        if (publication.user.toString() !== userId) {
-            return res.status(403).json({
-                success: false,
-                msg: 'You are not authorized to delete this publication',
-            });
-        }
+
         await Publication.findByIdAndUpdate(id, { status: false });
 
         res.status(200).json({

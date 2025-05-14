@@ -16,6 +16,9 @@ const PublicationSchema = Schema(
             ref: 'category',
             required: true
         },
+        img:{
+            type: String
+        },
         status: {
             type: Boolean,
             default: true
@@ -24,11 +27,7 @@ const PublicationSchema = Schema(
             type: Schema.Types.ObjectId,
             ref: 'Comment',
             required: true
-        }],
-        user:{
-            type: Schema.Types.ObjectId,
-            ref: 'User',
-        }
+        }]
     },
     {
         timestamps: true,

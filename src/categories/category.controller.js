@@ -2,13 +2,6 @@ import Category from "./category.model.js";
 
 export const saveCategory = async (req, res) => {
     try {
-        const authenticatedUser = req.usuario; 
-        if (!authenticatedUser || !authenticatedUser.isAdmin) {
-            return res.status(403).json({
-                success: false,
-                msg: 'You do not have permission to add categories'
-            });
-        }
         const data = req.body;
         const category = new Category({
             ...data
@@ -55,15 +48,6 @@ export const updateCategories = async (req, res) => {
     try {
         const { id } = req.params;
         const { _id,...data} = req.body;
-
-        const authenticatedUser = req.usuario; 
-        if (!authenticatedUser || !authenticatedUser.isAdmin) {
-            return res.status(403).json({
-                success: false,
-                msg: 'You do not have permission to update categories'
-            });
-        }
-    
         const category = await Category.findByIdAndUpdate(id, data, {new: true});
         if (!category) {
             return res.status(404).json({
@@ -89,13 +73,6 @@ export const updateCategories = async (req, res) => {
 export const deleteCategory = async (req, res) => {
     try {
         const { id } = req.params;
-        const authenticatedUser = req.usuario; 
-        if (!authenticatedUser || !authenticatedUser.isAdmin) {
-            return res.status(403).json({
-                success: false,
-                msg: 'You do not have permission to add categories'
-            });
-        }
         await Category.findByIdAndUpdate(id, {status: false})
         res.status(200).json({
             success:true,
