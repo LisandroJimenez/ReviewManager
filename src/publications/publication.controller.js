@@ -32,32 +32,34 @@ export const savePublication = async (req, res) => {
     }
 };
 
-
-
 export const getPublication = async (req, res) => {
-    const { limit = 10, since = 0 } = req.query;
+    const { limit = 10, since = 0, categoryId, title } = req.query;
     const query = { status: true };
+
+    if (categoryId) {
+        query.category = categoryId;
+    }
+
+    if (title) {
+        query.title = { $regex: title, $options: 'i' };
+    }
 
     try {
         const publications = await Publication.find(query)
             .skip(Number(since))
             .limit(Number(limit))
             .populate({
-                path: 'comments'
-            })
-
+                path: 'comments',
+                match: { status: true }
+            });
 
         const publicationWithCategoryNames = await Promise.all(publications.map(async (publication) => {
-            const category = await Category.findById(publication.category);
             let categoryName = "General";
-            if (category && category.status) {
+            const category = await Category.findOne({ _id: publication.category, status: true });
+            if (category) {
                 categoryName = category.name;
-            } else {
-                const generalCategory = await Category.findOne({ name: "General" });
-                if (generalCategory) {
-                    categoryName = generalCategory.name;
-                }
             }
+
             return {
                 ...publication.toObject(),
                 category: categoryName
@@ -83,12 +85,10 @@ export const getPublication = async (req, res) => {
 
 
 
- 
-
 
 export const updatePublication = async (req, res) => {
     const { id } = req.params;
-    const { _id, ...data } = req.body; 
+    const { _id, ...data } = req.body;
     try {
         const publication = await Publication.findById(id);
         if (!publication) {

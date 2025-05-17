@@ -31,6 +31,7 @@ export const saveComment = async (req, res) => {
         res.status(201).json({
             success: true,
             msg: 'Comment saved  successfully',
+            comment
         });
     } catch (error) {
         res.status(500).json({

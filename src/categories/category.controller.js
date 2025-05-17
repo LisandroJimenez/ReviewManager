@@ -89,7 +89,7 @@ export const deleteCategory = async (req, res) => {
 
 export const createCategory = async () => {
     try {
-      const categoriesToCheck = ["Taller", "Tecnologia", "Practica"];
+      const categoriesToCheck = ["Taller", "Tecnologia", "Practica Supervisada"];
   
       for (const name of categoriesToCheck) {
         const exists = await Category.findOne({ name });

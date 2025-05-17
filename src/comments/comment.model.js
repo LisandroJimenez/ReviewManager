@@ -1,6 +1,9 @@
 import { Schema, model } from "mongoose";
 
 const CommentSchema = Schema({
+    user:{
+        type: String,
+    },
     description: {
         type: String,
         required: true
@@ -13,10 +16,6 @@ const CommentSchema = Schema({
     status: {
         type: Boolean,
         default: true
-    },
-    user: {
-        type: Schema.Types.ObjectId,
-        ref: 'User'
     }
 },
 {

@@ -27,7 +27,7 @@ const PublicationSchema = Schema(
             type: Schema.Types.ObjectId,
             ref: 'Comment',
             required: true
-        }]
+        }],
     },
     {
         timestamps: true,
