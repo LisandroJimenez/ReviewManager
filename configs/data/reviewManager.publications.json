@@ -1,50 +1,236 @@
 [{
   "_id": {
-    "$oid": "67be9b897b13f42a27abd4e8"
+    "$oid": "68282018320fbcc2cbbc97d8"
   },
-  "title": "Futbol con familia",
-  "description": "futbol con tios, primos y mas",
+  "title": "Innovaciones en Inteligencia Artificial",
+  "description": "Explora las últimas tendencias y aplicaciones en inteligencia artificial para la informática.",
   "category": {
-    "$oid": "67be946e59b81825b8e389d3"
+    "$oid": "6826f047ab1680ab7cce01dc"
   },
+  "img": "https://whitestack.com/wp-content/uploads/2023/11/AI-1.webp",
   "status": true,
   "comments": [
     {
-      "$oid": "67be9fdb64e178adc8d73cea"
+      "$oid": "682aaf0b72b824ac58c643da"
     }
   ],
-  "user": {
-    "$oid": "67be909059b81825b8e389b9"
-  },
   "createdAt": {
-    "$date": "2025-02-26T04:41:45.507Z"
+    "$date": "2025-05-17T05:35:20.379Z"
   },
   "updatedAt": {
-    "$date": "2025-02-26T05:06:29.884Z"
+    "$date": "2025-05-19T04:09:47.270Z"
   }
 },
 {
   "_id": {
-    "$oid": "67be9f9f64e178adc8d73ce1"
+    "$oid": "6828205a320fbcc2cbbc97f3"
   },
-  "title": "Estudio",
-  "description": "Practicando matematicas",
+  "title": "Programación en Java",
+  "description": "Curso básico para aprender la sintaxis y conceptos fundamentales de Java, ideal para estudiantes de informática.",
   "category": {
-    "$oid": "67be90d259b81825b8e389c5"
+    "$oid": "6826f047ab1680ab7cce01d9"
   },
+  "img": "https://www.mytaskpanel.com/wp-content/uploads/2023/04/consulting-blog-09.webp",
   "status": true,
   "comments": [
     {
-      "$oid": "67be9ffc64e178adc8d73cf0"
+      "$oid": "6828214de52e4fe81643cc85"
     }
   ],
-  "user": {
-    "$oid": "67be909559b81825b8e389bc"
-  },
   "createdAt": {
-    "$date": "2025-02-26T04:59:11.546Z"
+    "$date": "2025-05-17T05:36:26.545Z"
   },
   "updatedAt": {
-    "$date": "2025-02-26T05:00:44.258Z"
+    "$date": "2025-05-17T05:40:29.132Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68282064320fbcc2cbbc97f6"
+  },
+  "title": "Redes y Seguridad Informática",
+  "description": "Conocé los principios de redes y técnicas para proteger sistemas contra ataques cibernéticos.",
+  "category": {
+    "$oid": "6826f047ab1680ab7cce01dc"
+  },
+  "img": "https://cyber-security.global/system/wp-content/uploads/2024/05/seguridad-1024x768-1-e1714756093940.jpg",
+  "status": true,
+  "comments": [],
+  "createdAt": {
+    "$date": "2025-05-17T05:36:36.781Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-17T05:36:36.781Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6828206f320fbcc2cbbc97f9"
+  },
+  "title": "Práctica Supervisada en Desarrollo Web",
+  "description": "Aplica tus conocimientos en proyectos reales de desarrollo web con supervisión profesional.",
+  "category": {
+    "$oid": "6826f047ab1680ab7cce01df"
+  },
+  "img": "https://impulso06.com/wp-content/uploads/2023/10/Guia-de-desarrollo-de-aplicaciones-web-de-manera-efectiva.png",
+  "status": true,
+  "comments": [
+    {
+      "$oid": "6828209fe52e4fe81643cc17"
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-05-17T05:36:47.957Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-17T05:37:35.317Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68282076320fbcc2cbbc97fc"
+  },
+  "title": "Bases de Datos Relacionales",
+  "description": "Curso para aprender diseño, implementación y gestión de bases de datos SQL.",
+  "category": {
+    "$oid": "6826f047ab1680ab7cce01d9"
+  },
+  "img": "https://www.godaddy.com/resources/latam/wp-content/uploads/sites/4/2023/06/portada_base-de-datos.png?size=3840x0",
+  "status": true,
+  "comments": [
+    {
+      "$oid": "682ab7059dff8ab233e7f19b"
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-05-17T05:36:54.739Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-19T04:43:49.370Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "682ab44575728793a1c06656"
+  },
+  "title": "Introducción a HTML y CSS",
+  "description": "Aprendé a crear páginas web estáticas utilizando las tecnologías fundamentales del desarrollo web.",
+  "category": {
+    "$oid": "6826f047ab1680ab7cce01d9"
+  },
+  "img": "https://miro.medium.com/v2/resize:fit:1400/1*-KdQqLcbBbhheLdAJbYp_A.jpeg",
+  "status": true,
+  "comments": [],
+  "createdAt": {
+    "$date": "2025-05-19T04:32:05.971Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-19T04:32:05.971Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "682ab44d75728793a1c06659"
+  },
+  "title": "Mantenimiento Preventivo de Equipos",
+  "description": "Técnicas básicas de mantenimiento para computadoras de escritorio y portátiles.",
+  "category": {
+    "$oid": "6826f047ab1680ab7cce01d9"
+  },
+  "img": "https://elinge.co/wp-content/uploads/2023/08/mantenimiento-preventivo-de-computadores-ID-01.webp",
+  "status": true,
+  "comments": [],
+  "createdAt": {
+    "$date": "2025-05-19T04:32:13.588Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-19T04:32:13.588Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "682ab45575728793a1c0665c"
+  },
+  "title": "Bitácora de Práctica en Soporte Técnico",
+  "description": "Registros semanales de actividades realizadas en el área de soporte durante la práctica supervisada.",
+  "category": {
+    "$oid": "6826f047ab1680ab7cce01df"
+  },
+  "img": "https://cdn.slidesharecdn.com/ss_thumbnails/bitacoradepracticasemana5-141130191532-conversion-gate02-thumbnail.jpg?width=560&fit=bounds",
+  "status": true,
+  "comments": [
+    {
+      "$oid": "682ab48b75728793a1c066a8"
+    },
+    {
+      "$oid": "682ab6ed9dff8ab233e7f197"
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-05-19T04:32:21.452Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-19T04:43:25.023Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "682ab46675728793a1c0665f"
+  },
+  "title": "Programación Orientada a Objetos en Java",
+  "description": "Dominá los principios de la POO con ejemplos prácticos y claros en lenguaje Java.",
+  "category": {
+    "$oid": "6826f047ab1680ab7cce01dc"
+  },
+  "img": "https://blog.facialix.com/wp-content/uploads/2022/08/miniatura-2.jpg",
+  "status": true,
+  "comments": [
+    {
+      "$oid": "682ab6bf9dff8ab233e7f153"
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-05-19T04:32:38.288Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-19T04:42:39.853Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "682ab46c75728793a1c06662"
+  },
+  "title": "Instalación y Configuración de Software",
+  "description": "Curso práctico sobre instalación de sistemas operativos, drivers y programas comunes.",
+  "category": {
+    "$oid": "6826f047ab1680ab7cce01d9"
+  },
+  "img": "https://46bd6ec760.cbaul-cdnwnd.com/ee806294ebdcff6b6fcd2b7cdf203923/200000014-67b0468aa3/Diversidad%20de%20soluciones%20inform%C3%A1ticas%20y%20conectividad%20a%20sus%20necesidades.jpg",
+  "status": true,
+  "comments": [],
+  "createdAt": {
+    "$date": "2025-05-19T04:32:44.937Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-19T04:32:44.937Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "682ab47375728793a1c06665"
+  },
+  "title": "Práctica: Desarrollo de Aplicación CRUD",
+  "description": "Aplicación CRUD realizada durante la práctica supervisada usando Node.js y MongoDB.",
+  "category": {
+    "$oid": "6826f047ab1680ab7cce01df"
+  },
+  "img": "https://i0.wp.com/lab.wallarm.com/wp-content/uploads/2024/07/189-Preview-1.jpg?fit=800%2C480&ssl=1",
+  "status": true,
+  "comments": [],
+  "createdAt": {
+    "$date": "2025-05-19T04:32:51.778Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-19T04:32:51.778Z"
   }
 }]

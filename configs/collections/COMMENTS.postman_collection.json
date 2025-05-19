@@ -19,7 +19,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"description\": \"Estudia bien \"\r\n}",
+					"raw": "{\r\n    \"user\":\"Lisandro\",\r\n    \"description\": \"Estudia bien \"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -27,7 +27,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/reviewManager/v1/comments/67be9f9f64e178adc8d73ce1",
+					"raw": "http://localhost:3000/reviewManager/v1/comments/6826f064ab1680ab7cce0216",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -37,7 +37,7 @@
 						"reviewManager",
 						"v1",
 						"comments",
-						"67be9f9f64e178adc8d73ce1"
+						"6826f064ab1680ab7cce0216"
 					]
 				}
 			},

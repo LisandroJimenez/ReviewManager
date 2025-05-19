@@ -1,38 +1,51 @@
 [{
   "_id": {
-    "$oid": "67be9fdb64e178adc8d73cea"
+    "$oid": "682ab6bf9dff8ab233e7f153"
   },
-  "description": "pasenla bien, saludos",
+  "user": "Andres",
+  "description": "Que es eso?",
   "publication": {
-    "$oid": "67be9b897b13f42a27abd4e8"
+    "$oid": "682ab46675728793a1c0665f"
   },
   "status": true,
-  "user": {
-    "$oid": "67be909559b81825b8e389bc"
-  },
   "createdAt": {
-    "$date": "2025-02-26T05:00:11.675Z"
+    "$date": "2025-05-19T04:42:39.054Z"
   },
   "updatedAt": {
-    "$date": "2025-02-26T05:17:11.167Z"
+    "$date": "2025-05-19T04:42:39.054Z"
   }
 },
 {
   "_id": {
-    "$oid": "67be9ffc64e178adc8d73cf0"
+    "$oid": "682ab6ed9dff8ab233e7f197"
   },
-  "description": "Estudia bien ",
+  "user": "Gabriel",
+  "description": "quiero informacion",
   "publication": {
-    "$oid": "67be9f9f64e178adc8d73ce1"
+    "$oid": "682ab45575728793a1c0665c"
   },
   "status": true,
-  "user": {
-    "$oid": "67be909059b81825b8e389b9"
-  },
   "createdAt": {
-    "$date": "2025-02-26T05:00:44.257Z"
+    "$date": "2025-05-19T04:43:25.022Z"
   },
   "updatedAt": {
-    "$date": "2025-02-26T05:00:44.257Z"
+    "$date": "2025-05-19T04:43:25.022Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "682ab7059dff8ab233e7f19b"
+  },
+  "user": "Lisandro ",
+  "description": "Interesante, gracias",
+  "publication": {
+    "$oid": "68282076320fbcc2cbbc97fc"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-05-19T04:43:49.369Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-19T04:43:49.369Z"
   }
 }]

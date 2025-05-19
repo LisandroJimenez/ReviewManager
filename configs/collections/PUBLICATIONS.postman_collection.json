@@ -13,13 +13,13 @@
 				"header": [
 					{
 						"key": "x-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JlOTA5NTU5YjgxODI1YjhlMzg5YmMiLCJpYXQiOjE3NDA1NDU5MTIsImV4cCI6MTc0MDU0OTUxMn0.CWGXIh0OmJxillXShHwtmvoR-5s9pY1wW__YiEpedog",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JlOTA2MjU5YjgxODI1YjhlMzg5YjMiLCJpYXQiOjE3NDcxOTU0MTcsImV4cCI6MTc0NzE5OTAxN30.d7JbqUE_FuB1MYqbaYIaBajuBGcmR4oARJ6TU5HmJqU",
 						"type": "text"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"title\": \"Estudio\",\r\n    \"description\": \"Practicando matematicas\",\r\n    //id de la categoria\r\n    \"id\": \"67be90d259b81825b8e389c5\"\r\n}",
+					"raw": "\r\n  {\r\n    \"title\": \"Práctica: Desarrollo de Aplicación CRUD\",\r\n    \"description\": \"Aplicación CRUD realizada durante la práctica supervisada usando Node.js y MongoDB.\",\r\n    \"img\": \"https://i0.wp.com/lab.wallarm.com/wp-content/uploads/2024/07/189-Preview-1.jpg?fit=800%2C480&ssl=1\",\r\n    \"categoryId\": \"6826f047ab1680ab7cce01df\" \r\n  }\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -67,16 +67,10 @@
 			"name": "Update-Publications",
 			"request": {
 				"method": "PUT",
-				"header": [
-					{
-						"key": "x-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JlOTA5MDU5YjgxODI1YjhlMzg5YjkiLCJpYXQiOjE3NDA1NDU3NDYsImV4cCI6MTc0MDU0OTM0Nn0.LOZFdjyf3eRDdhNAUSRKcdt4tr9yx3ZP3litQPuQEN4",
-						"type": "text"
-					}
-				],
+				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"description\": \"futbol con tios, primos y mas\"\r\n}",
+					"raw": "{\r\n    \"title\": \"pseint\",\r\n    \"description\":\"mi primer holamundo\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -84,7 +78,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/reviewManager/v1/publications/67be9b897b13f42a27abd4e8",
+					"raw": "http://localhost:3000/reviewManager/v1/publications/68256204d9f132c9b776a5dd",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -94,7 +88,7 @@
 						"reviewManager",
 						"v1",
 						"publications",
-						"67be9b897b13f42a27abd4e8"
+						"68256204d9f132c9b776a5dd"
 					]
 				}
 			},
@@ -123,6 +117,61 @@
 						"v1",
 						"publications",
 						"67be9b897b13f42a27abd4e8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPostById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/reviewManager/v1/publications/?categoryId=68257bcf71d8419db87c480c",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"reviewManager",
+						"v1",
+						"publications",
+						""
+					],
+					"query": [
+						{
+							"key": "categoryId",
+							"value": "68257bcf71d8419db87c480c"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPostByName",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/reviewManager/v1/publications?title=j",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"reviewManager",
+						"v1",
+						"publications"
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "j"
+						}
 					]
 				}
 			},

@@ -1,39 +1,39 @@
 [{
   "_id": {
-    "$oid": "67be906259b81825b8e389b6"
+    "$oid": "6826f047ab1680ab7cce01d9"
   },
-  "name": "General",
+  "name": "Taller",
   "status": true,
   "createdAt": {
-    "$date": "2025-02-26T03:54:10.812Z"
+    "$date": "2025-05-16T07:59:03.542Z"
   },
   "updatedAt": {
-    "$date": "2025-02-26T03:54:10.812Z"
+    "$date": "2025-05-16T07:59:03.542Z"
   }
 },
 {
   "_id": {
-    "$oid": "67be90d259b81825b8e389c5"
+    "$oid": "6826f047ab1680ab7cce01dc"
   },
-  "name": "Ciencias",
+  "name": "Tecnologia",
   "status": true,
   "createdAt": {
-    "$date": "2025-02-26T03:56:02.931Z"
+    "$date": "2025-05-16T07:59:03.602Z"
   },
   "updatedAt": {
-    "$date": "2025-02-26T05:18:26.927Z"
+    "$date": "2025-05-16T07:59:03.602Z"
   }
 },
 {
   "_id": {
-    "$oid": "67be946e59b81825b8e389d3"
+    "$oid": "6826f047ab1680ab7cce01df"
   },
-  "name": "Pasatiempo",
+  "name": "Practica Supervisada",
   "status": true,
   "createdAt": {
-    "$date": "2025-02-26T04:11:26.000Z"
+    "$date": "2025-05-16T07:59:03.605Z"
   },
   "updatedAt": {
-    "$date": "2025-02-26T05:10:41.783Z"
+    "$date": "2025-05-16T07:59:03.605Z"
   }
 }]
