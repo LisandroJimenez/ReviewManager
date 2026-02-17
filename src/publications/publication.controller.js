@@ -33,7 +33,7 @@ export const savePublication = async (req, res) => {
 };
 
 export const getPublication = async (req, res) => {
-    const { limit = 10, since = 0, categoryId, title } = req.query;
+    const { limit , since , categoryId, title } = req.query;
     const query = { status: true };
 
     if (categoryId) {
