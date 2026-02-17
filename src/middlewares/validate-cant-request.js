@@ -1,11 +1,11 @@
 import rateLimit from "express-rate-limit";
 
 const limiter = rateLimit({
-    windowMs: 50 * 60 * 1000,
-    max: 200,
+    windowMs: 60 * 60 * 1000,
+    max: 500,
     message: {
         success: false,
-        msg: "Too many requests from this IP, please try again after 15 minutes"
+        msg: "Has alcanzado el límite de peticiones por hora. Intenta de nuevo en 60 minutos."
     }
 })
 

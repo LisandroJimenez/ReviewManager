@@ -15,7 +15,7 @@ const middlewares = (app) =>{
     app.use(express.json());
 
     app.use(helmet());
-    app.use(cors()); // En producción, es más seguro dejarlo abierto o configurar el link de tu frontend de Render
+    app.use(cors()); 
     app.use(morgan('dev'));
     app.use(limiter);
 }
