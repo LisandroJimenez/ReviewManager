@@ -10,17 +10,12 @@ import publicationRoutes from '../src/publications/publication.routes.js'
 import commentRoutes from '../src/comments/comment.routes.js'
 import { createCategory } from '../src/categories/category.controller.js';
 
-
 const middlewares = (app) =>{
     app.use(express.urlencoded({extended: false}));
     app.use(express.json());
 
     app.use(helmet());
-    app.use(cors({
-        origin: 'http://localhost:5173', // Allow your Vite dev server
-        methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
-        allowedHeaders: ['Content-Type', 'Authorization']
-    }));
+    app.use(cors()); // En producción, es más seguro dejarlo abierto o configurar el link de tu frontend de Render
     app.use(morgan('dev'));
     app.use(limiter);
 }
@@ -32,29 +27,28 @@ const routes = (app) =>{
 }
 
 const conectarDB = async() =>{
-    
     try {
         await dbConnection();
         console.log('Successful connection to the database')
     } catch (error) {
-        console.log('Failed to connect to database')
+        console.log('Failed to connect to database', error)
     }
 }
 
-
 export const initServer = async() =>{
     const app = express();
-    const port = process.env.PORT || 3001;
-    try {
-     middlewares(app);
-     conectarDB();
-     await createCategory()
-     routes(app);
-     app.listen(port);
-     console.log(`server running on port ${port}`)
+    const port = process.env.PORT || 3001; 
     
- } catch (err) {
-    console.log(`server init failed: ${err}`)
- }
-
+    try {
+        middlewares(app);
+        await conectarDB(); 
+        await createCategory();
+        routes(app);
+        app.listen(port, '0.0.0.0', () => {
+            console.log(`Server running on port ${port}`);
+        });
+        
+    } catch (err) {
+        console.log(`server init failed: ${err}`);
+    }
 }
